@@ -1,0 +1,3201 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/lramsey/product-recommender#readme">product-recommender (v1.3.2)</a>
+</h1>
+<h4>npm module that utilizes a python machine learning recommendation engine to give easy access to product recommendations.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender">module product-recommender</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.getCustomerCluster">
+            function <span class="apidocSignatureSpan">product-recommender.</span>getCustomerCluster
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.getCustomerClusterByProduct">
+            function <span class="apidocSignatureSpan">product-recommender.</span>getCustomerClusterByProduct
+            <span class="apidocSignatureSpan">(name, product)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.getProductCluster">
+            function <span class="apidocSignatureSpan">product-recommender.</span>getProductCluster
+            <span class="apidocSignatureSpan">(product)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.getRecKeys">
+            function <span class="apidocSignatureSpan">product-recommender.</span>getRecKeys
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.getRecVariable">
+            function <span class="apidocSignatureSpan">product-recommender.</span>getRecVariable
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.loadRecVariable">
+            function <span class="apidocSignatureSpan">product-recommender.</span>loadRecVariable
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.loadRecVariables">
+            function <span class="apidocSignatureSpan">product-recommender.</span>loadRecVariables
+            <span class="apidocSignatureSpan">(keys, values)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.nearestNeighborhoods">
+            function <span class="apidocSignatureSpan">product-recommender.</span>nearestNeighborhoods
+            <span class="apidocSignatureSpan">(name, num)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.nearestNeighbors">
+            function <span class="apidocSignatureSpan">product-recommender.</span>nearestNeighbors
+            <span class="apidocSignatureSpan">(name, num, overflow)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.nearestProductNeighborhoods">
+            function <span class="apidocSignatureSpan">product-recommender.</span>nearestProductNeighborhoods
+            <span class="apidocSignatureSpan">(name, num)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.nearestProducts">
+            function <span class="apidocSignatureSpan">product-recommender.</span>nearestProducts
+            <span class="apidocSignatureSpan">(name, num, overflow)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.pastCustomerRecommendations">
+            function <span class="apidocSignatureSpan">product-recommender.</span>pastCustomerRecommendations
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.powerRecommendation">
+            function <span class="apidocSignatureSpan">product-recommender.</span>powerRecommendation
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.recommendByProduct">
+            function <span class="apidocSignatureSpan">product-recommender.</span>recommendByProduct
+            <span class="apidocSignatureSpan">(name, product)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.recommender">
+            function <span class="apidocSignatureSpan">product-recommender.</span>recommender
+            <span class="apidocSignatureSpan">(name, matrix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.relatedCustomers">
+            function <span class="apidocSignatureSpan">product-recommender.</span>relatedCustomers
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.relatedCustomersByProduct">
+            function <span class="apidocSignatureSpan">product-recommender.</span>relatedCustomersByProduct
+            <span class="apidocSignatureSpan">(name, product)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.relatedProducts">
+            function <span class="apidocSignatureSpan">product-recommender.</span>relatedProducts
+            <span class="apidocSignatureSpan">(product)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.setRecVariables">
+            function <span class="apidocSignatureSpan">product-recommender.</span>setRecVariables
+            <span class="apidocSignatureSpan">(matrix, cb, names, prods)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">product-recommender.</span>analytics</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">product-recommender.</span>engine</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">product-recommender.</span>helpers</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.analytics">module product-recommender.analytics</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.analytics.getCustomerCluster">
+            function <span class="apidocSignatureSpan">product-recommender.analytics.</span>getCustomerCluster
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.analytics.getCustomerClusterByProduct">
+            function <span class="apidocSignatureSpan">product-recommender.analytics.</span>getCustomerClusterByProduct
+            <span class="apidocSignatureSpan">(name, product)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.analytics.getProductCluster">
+            function <span class="apidocSignatureSpan">product-recommender.analytics.</span>getProductCluster
+            <span class="apidocSignatureSpan">(product)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.analytics.nearestNeighborhoods">
+            function <span class="apidocSignatureSpan">product-recommender.analytics.</span>nearestNeighborhoods
+            <span class="apidocSignatureSpan">(name, num)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.analytics.nearestNeighbors">
+            function <span class="apidocSignatureSpan">product-recommender.analytics.</span>nearestNeighbors
+            <span class="apidocSignatureSpan">(name, num, overflow)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.analytics.nearestProductNeighborhoods">
+            function <span class="apidocSignatureSpan">product-recommender.analytics.</span>nearestProductNeighborhoods
+            <span class="apidocSignatureSpan">(name, num)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.analytics.nearestProducts">
+            function <span class="apidocSignatureSpan">product-recommender.analytics.</span>nearestProducts
+            <span class="apidocSignatureSpan">(name, num, overflow)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.analytics.pastCustomerRecommendations">
+            function <span class="apidocSignatureSpan">product-recommender.analytics.</span>pastCustomerRecommendations
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.analytics.powerRecommendation">
+            function <span class="apidocSignatureSpan">product-recommender.analytics.</span>powerRecommendation
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.analytics.recommendByProduct">
+            function <span class="apidocSignatureSpan">product-recommender.analytics.</span>recommendByProduct
+            <span class="apidocSignatureSpan">(name, product)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.analytics.recommender">
+            function <span class="apidocSignatureSpan">product-recommender.analytics.</span>recommender
+            <span class="apidocSignatureSpan">(name, matrix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.analytics.relatedCustomers">
+            function <span class="apidocSignatureSpan">product-recommender.analytics.</span>relatedCustomers
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.analytics.relatedCustomersByProduct">
+            function <span class="apidocSignatureSpan">product-recommender.analytics.</span>relatedCustomersByProduct
+            <span class="apidocSignatureSpan">(name, product)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.analytics.relatedProducts">
+            function <span class="apidocSignatureSpan">product-recommender.analytics.</span>relatedProducts
+            <span class="apidocSignatureSpan">(product)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.engine">module product-recommender.engine</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.engine.setRecVariables">
+            function <span class="apidocSignatureSpan">product-recommender.engine.</span>setRecVariables
+            <span class="apidocSignatureSpan">(matrix, cb, names, prods)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.getCustomerCluster">module product-recommender.getCustomerCluster</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.getCustomerCluster.getCustomerCluster">
+            function <span class="apidocSignatureSpan">product-recommender.</span>getCustomerCluster
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.getCustomerClusterByProduct">module product-recommender.getCustomerClusterByProduct</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.getCustomerClusterByProduct.getCustomerClusterByProduct">
+            function <span class="apidocSignatureSpan">product-recommender.</span>getCustomerClusterByProduct
+            <span class="apidocSignatureSpan">(name, product)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.getProductCluster">module product-recommender.getProductCluster</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.getProductCluster.getProductCluster">
+            function <span class="apidocSignatureSpan">product-recommender.</span>getProductCluster
+            <span class="apidocSignatureSpan">(product)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.getRecKeys">module product-recommender.getRecKeys</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.getRecKeys.getRecKeys">
+            function <span class="apidocSignatureSpan">product-recommender.</span>getRecKeys
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.getRecVariable">module product-recommender.getRecVariable</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.getRecVariable.getRecVariable">
+            function <span class="apidocSignatureSpan">product-recommender.</span>getRecVariable
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.helpers">module product-recommender.helpers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.helpers._binarySearch">
+            function <span class="apidocSignatureSpan">product-recommender.helpers.</span>_binarySearch
+            <span class="apidocSignatureSpan">(item, arr, low, high)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.helpers._extend">
+            function <span class="apidocSignatureSpan">product-recommender.helpers.</span>_extend
+            <span class="apidocSignatureSpan">(obj1)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.helpers._findNearestNeighborhoods">
+            function <span class="apidocSignatureSpan">product-recommender.helpers.</span>_findNearestNeighborhoods
+            <span class="apidocSignatureSpan">(name, num, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.helpers._findNearestNeighbors">
+            function <span class="apidocSignatureSpan">product-recommender.helpers.</span>_findNearestNeighbors
+            <span class="apidocSignatureSpan">(name, num, type, overflow)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.helpers._nameChecker">
+            function <span class="apidocSignatureSpan">product-recommender.helpers.</span>_nameChecker
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.helpers._productChecker">
+            function <span class="apidocSignatureSpan">product-recommender.helpers.</span>_productChecker
+            <span class="apidocSignatureSpan">(product)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.helpers._productClusterFinder">
+            function <span class="apidocSignatureSpan">product-recommender.helpers.</span>_productClusterFinder
+            <span class="apidocSignatureSpan">(product)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.helpers._recVariableChecker">
+            function <span class="apidocSignatureSpan">product-recommender.helpers.</span>_recVariableChecker
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.loadRecVariable">module product-recommender.loadRecVariable</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.loadRecVariable.loadRecVariable">
+            function <span class="apidocSignatureSpan">product-recommender.</span>loadRecVariable
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.loadRecVariables">module product-recommender.loadRecVariables</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.loadRecVariables.loadRecVariables">
+            function <span class="apidocSignatureSpan">product-recommender.</span>loadRecVariables
+            <span class="apidocSignatureSpan">(keys, values)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.nearestNeighborhoods">module product-recommender.nearestNeighborhoods</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.nearestNeighborhoods.nearestNeighborhoods">
+            function <span class="apidocSignatureSpan">product-recommender.</span>nearestNeighborhoods
+            <span class="apidocSignatureSpan">(name, num)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.nearestNeighbors">module product-recommender.nearestNeighbors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.nearestNeighbors.nearestNeighbors">
+            function <span class="apidocSignatureSpan">product-recommender.</span>nearestNeighbors
+            <span class="apidocSignatureSpan">(name, num, overflow)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.nearestProductNeighborhoods">module product-recommender.nearestProductNeighborhoods</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.nearestProductNeighborhoods.nearestProductNeighborhoods">
+            function <span class="apidocSignatureSpan">product-recommender.</span>nearestProductNeighborhoods
+            <span class="apidocSignatureSpan">(name, num)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.nearestProducts">module product-recommender.nearestProducts</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.nearestProducts.nearestProducts">
+            function <span class="apidocSignatureSpan">product-recommender.</span>nearestProducts
+            <span class="apidocSignatureSpan">(name, num, overflow)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.pastCustomerRecommendations">module product-recommender.pastCustomerRecommendations</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.pastCustomerRecommendations.pastCustomerRecommendations">
+            function <span class="apidocSignatureSpan">product-recommender.</span>pastCustomerRecommendations
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.powerRecommendation">module product-recommender.powerRecommendation</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.powerRecommendation.powerRecommendation">
+            function <span class="apidocSignatureSpan">product-recommender.</span>powerRecommendation
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.recommendByProduct">module product-recommender.recommendByProduct</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.recommendByProduct.recommendByProduct">
+            function <span class="apidocSignatureSpan">product-recommender.</span>recommendByProduct
+            <span class="apidocSignatureSpan">(name, product)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.recommender">module product-recommender.recommender</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.recommender.recommender">
+            function <span class="apidocSignatureSpan">product-recommender.</span>recommender
+            <span class="apidocSignatureSpan">(name, matrix)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.relatedCustomers">module product-recommender.relatedCustomers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.relatedCustomers.relatedCustomers">
+            function <span class="apidocSignatureSpan">product-recommender.</span>relatedCustomers
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.relatedCustomersByProduct">module product-recommender.relatedCustomersByProduct</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.relatedCustomersByProduct.relatedCustomersByProduct">
+            function <span class="apidocSignatureSpan">product-recommender.</span>relatedCustomersByProduct
+            <span class="apidocSignatureSpan">(name, product)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.relatedProducts">module product-recommender.relatedProducts</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.relatedProducts.relatedProducts">
+            function <span class="apidocSignatureSpan">product-recommender.</span>relatedProducts
+            <span class="apidocSignatureSpan">(product)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.product-recommender.setRecVariables">module product-recommender.setRecVariables</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.product-recommender.setRecVariables.setRecVariables">
+            function <span class="apidocSignatureSpan">product-recommender.</span>setRecVariables
+            <span class="apidocSignatureSpan">(matrix, cb, names, prods)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender" id="apidoc.module.product-recommender">module product-recommender</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.getCustomerCluster" id="apidoc.element.product-recommender.getCustomerCluster">
+        function <span class="apidocSignatureSpan">product-recommender.</span>getCustomerCluster
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCustomerCluster = function (name){
+  helpers._nameChecker(name);
+  helpers._recVariableChecker();
+  var index = rec.customerClusterHelpers[2][name];
+  var cluster = rec.customerClusters[index].slice();
+  return cluster;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.pastCustomerRecommendatons('Steve')
+
+**getCustomerCluster(customer)**
+
+This method accepts a customer string as a parameter and returns an array of the global customer cluster that contains that input
+ customer.  These customers in the returned cluster all have similar buying patterns across all products.
+
+rec.<span class="apidocCodeKeywordSpan">getCustomerCluster</span>('Steve')
+
+**getCustomerClusterByProducts(customer, product)**
+
+This method accepts a customer string and product string as parameters and returns a cluster that is chosen based on the input customer
+'s buying trends in relation to products similar to the input product.  This cluster is an array that contains customer names
+, including the input customer.
+
+rec.getCustomerClustersByProducts('Steve', 'shoes')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.getCustomerClusterByProduct" id="apidoc.element.product-recommender.getCustomerClusterByProduct">
+        function <span class="apidocSignatureSpan">product-recommender.</span>getCustomerClusterByProduct
+        <span class="apidocSignatureSpan">(name, product)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCustomerClusterByProduct = function (name, product){
+  helpers._nameChecker(name);
+  helpers._productChecker(product);
+  helpers._recVariableChecker();
+  var subClustIndex = helpers._productClusterFinder(product);
+  var map = rec.subClustersHelpers[index][2];
+  var cluster = rec.subClusters[index];
+  var related = cluster[map[name]].slice();
+  return related;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Analytics.relatedCustomers = function(name){
+var cluster = this.getCustomerCluster(name);
+cluster.splice(cluster.indexOf(name), 1);
+return cluster;
+};
+
+Analytics.relatedCustomersByProduct = function(name, product){
+var related = this.<span class="apidocCodeKeywordSpan">getCustomerClusterByProduct</span>(name, product);
+related.splice(related.indexOf(name), 1);
+return related;
+};
+
+Analytics.relatedProducts = function(product){
+var cluster = this.getProductCluster(product);
+cluster.splice(cluster.indexOf(product), 1);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.getProductCluster" id="apidoc.element.product-recommender.getProductCluster">
+        function <span class="apidocSignatureSpan">product-recommender.</span>getProductCluster
+        <span class="apidocSignatureSpan">(product)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getProductCluster = function (product){
+  var index = helpers._productClusterFinder(product);
+  var cluster = rec.productClusters[index].slice();
+  return cluster;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.getCustomerClustersByProducts('Steve', 'shoes')
+
+**getProductCluster(product)**
+
+This method accepts a product string as a parameter and returns an array of products similar to the input product, including the
+ input product.  This returned array is the product cluster that contains the input product.
+
+rec.<span class="apidocCodeKeywordSpan">getProductCluster</span>('shoes')
+
+**relatedCustomers(customer)**
+
+This method accepts a customer string as a parameter and returns an array of customers with similar purchase histories based on
+clustering.  This result returns the members of that customer's global cluster group, excluding the input customer.  To investigate
+ more focused groups based on certain product patterns, please use the the relatedCustomersByProduct method.
+
+rec.relatedCustomers('Steve')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.getRecKeys" id="apidoc.element.product-recommender.getRecKeys">
+        function <span class="apidocSignatureSpan">product-recommender.</span>getRecKeys
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRecKeys = function (){
+  return Object.keys(rec);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The recommendation variables hold the fine-grained results from my product recommendation algorithm.  These results can be accessed
+ overall by the results variable, or can be broken into various categories.  To access a recommendation variable, one would call
+ the getRecVariable method, passing the desired variable name in as a key.
+
+    rec.getRecVariable(key);
+
+To receive an array containing all of the recommendation keys, one can call the getRecKeys() method.
+
+    rec.<span class="apidocCodeKeywordSpan">getRecKeys</span>();
+
+To manually set a value on a recommendation variable, use the loadRecVariable() method.  This method takes two parameterss, a string
+ that signifies the name of the recommendation variable to change, and a value which will be set to that recommendation variable
+. Any value entered here to a recommendation variable could cause errors in the module if it is not the same format the recommendation
+ variable typically would be after executing setRecVariables.  Also, altering some recommendation variables but not others could
+ lead to outcomes that are not consistent to one set of the recommendation engine's analysis.  Could be used to load past results
+ from the recommendation engine.  Use this method with caution.
+
+    rec.loadRecVariable(key, value)
+
+To manually set several values on a recommendation variable, use the loadRecVariables method.  The first parameter is an array of
+ strings filled with the name of recommendation variables to change. The second parameter is an array of values which to assign
+to the previous mentioned recommendation variables.  The value that is in the same index as the recommendation variable name in
+the key array will be assigned to that recommendation variable.  If the key and value arrays are of different lengths, the code
+will throw an error.  Could be used to load past results from the recommendation engine.  Again, use with caution.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.getRecVariable" id="apidoc.element.product-recommender.getRecVariable">
+        function <span class="apidocSignatureSpan">product-recommender.</span>getRecVariable
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRecVariable = function (key){
+  if(rec[key] === undefined){
+    throw new Error('not a valid recommendation variable');
+  } else if(rec[key] === null){
+    throw new Error('variable is null.  please run setRecVariables');
+  } else{
+    return rec[key];
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+[API](#use)
+
+## 3.  &lt;a name='vars' href='#'/&gt; Recommendation Variables
+
+The recommendation variables hold the fine-grained results from my product recommendation algorithm.  These results can be accessed
+ overall by the results variable, or can be broken into various categories.  To access a recommendation variable, one would call
+ the getRecVariable method, passing the desired variable name in as a key.
+
+    rec.<span class="apidocCodeKeywordSpan">getRecVariable</span>(key);
+
+To receive an array containing all of the recommendation keys, one can call the getRecKeys() method.
+
+    rec.getRecKeys();
+
+To manually set a value on a recommendation variable, use the loadRecVariable() method.  This method takes two parameterss, a string
+ that signifies the name of the recommendation variable to change, and a value which will be set to that recommendation variable
+. Any value entered here to a recommendation variable could cause errors in the module if it is not the same format the recommendation
+ variable typically would be after executing setRecVariables.  Also, altering some recommendation variables but not others could
+ lead to outcomes that are not consistent to one set of the recommendation engine's analysis.  Could be used to load past results
+ from the recommendation engine.  Use this method with caution.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.loadRecVariable" id="apidoc.element.product-recommender.loadRecVariable">
+        function <span class="apidocSignatureSpan">product-recommender.</span>loadRecVariable
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadRecVariable = function (key, value){
+  if(rec[key] === undefined){
+    throw new Error('not a valid recommendation variable');
+  } else{
+    rec[key] = value;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+To receive an array containing all of the recommendation keys, one can call the getRecKeys() method.
+
+    rec.getRecKeys();
+
+To manually set a value on a recommendation variable, use the loadRecVariable() method.  This method takes two parameterss, a string
+ that signifies the name of the recommendation variable to change, and a value which will be set to that recommendation variable
+. Any value entered here to a recommendation variable could cause errors in the module if it is not the same format the recommendation
+ variable typically would be after executing setRecVariables.  Also, altering some recommendation variables but not others could
+ lead to outcomes that are not consistent to one set of the recommendation engine's analysis.  Could be used to load past results
+ from the recommendation engine.  Use this method with caution.
+
+    rec.<span class="apidocCodeKeywordSpan">loadRecVariable</span>(key, value)
+
+To manually set several values on a recommendation variable, use the loadRecVariables method.  The first parameter is an array of
+ strings filled with the name of recommendation variables to change. The second parameter is an array of values which to assign
+to the previous mentioned recommendation variables.  The value that is in the same index as the recommendation variable name in
+the key array will be assigned to that recommendation variable.  If the key and value arrays are of different lengths, the code
+will throw an error.  Could be used to load past results from the recommendation engine.  Again, use with caution.
+
+    rec.loadRecVariables(keys, values)
+
+Initially the recommendation variables will be set to null, until a call is made to launch the python recommendation engine.  Now
+, I will describe the recommendation variables.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.loadRecVariables" id="apidoc.element.product-recommender.loadRecVariables">
+        function <span class="apidocSignatureSpan">product-recommender.</span>loadRecVariables
+        <span class="apidocSignatureSpan">(keys, values)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadRecVariables = function (keys, values){
+  if(keys.length &gt; values.length){
+    throw new Error('Each key must have a value');
+  } else if (keys.length &lt; values.length){
+    throw new Error('Each value must have a key');
+  } else{
+    keys.forEach(function(key, i){
+      this.loadRecVariable(key, values[i]);
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+To manually set a value on a recommendation variable, use the loadRecVariable() method.  This method takes two parameterss, a string
+ that signifies the name of the recommendation variable to change, and a value which will be set to that recommendation variable
+. Any value entered here to a recommendation variable could cause errors in the module if it is not the same format the recommendation
+ variable typically would be after executing setRecVariables.  Also, altering some recommendation variables but not others could
+ lead to outcomes that are not consistent to one set of the recommendation engine's analysis.  Could be used to load past results
+ from the recommendation engine.  Use this method with caution.
+
+    rec.loadRecVariable(key, value)
+
+To manually set several values on a recommendation variable, use the loadRecVariables method.  The first parameter is an array of
+ strings filled with the name of recommendation variables to change. The second parameter is an array of values which to assign
+to the previous mentioned recommendation variables.  The value that is in the same index as the recommendation variable name in
+the key array will be assigned to that recommendation variable.  If the key and value arrays are of different lengths, the code
+will throw an error.  Could be used to load past results from the recommendation engine.  Again, use with caution.
+
+    rec.<span class="apidocCodeKeywordSpan">loadRecVariables</span>(keys, values)
+
+Initially the recommendation variables will be set to null, until a call is made to launch the python recommendation engine.  Now
+, I will describe the recommendation variables.
+
+**results**
+
+An array containing all of the below recommendation variables except for rawResults.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.nearestNeighborhoods" id="apidoc.element.product-recommender.nearestNeighborhoods">
+        function <span class="apidocSignatureSpan">product-recommender.</span>nearestNeighborhoods
+        <span class="apidocSignatureSpan">(name, num)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nearestNeighborhoods = function (name, num){
+  return helpers._findNearestNeighborhoods(name, num, 'customers');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.nearestNeighbors" id="apidoc.element.product-recommender.nearestNeighbors">
+        function <span class="apidocSignatureSpan">product-recommender.</span>nearestNeighbors
+        <span class="apidocSignatureSpan">(name, num, overflow)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nearestNeighbors = function (name, num, overflow){
+  return helpers._findNearestNeighbors(name, num, 'customers', overflow);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.relatedProducts('shoes')
+
+**nearestNeighbors(customer, num, overflow)**
+
+This method takes a customer string as a parameter, and contains an optional num parameter that will default to 1 if it is not included
+ as an argument.  The optional overflow parameter defaults to true.   The method reveals which customers are the lowest distance
+ away from the listed customer.  An array is returned that contains at least the num closest customers to the listed customer.
+The array is ordered, so customers at a lower index are either closer or the same distance away as customers at a higher index.
+The array may be greater than length num if when index num has been reached there is a tie to who is the closest customer.  If the
+ overflow parameter is set to false, then the array will be limited to length num, even in the case of ties.
+
+rec.<span class="apidocCodeKeywordSpan">nearestNeighbors</span>('Steve', 4, false)
+
+**nearestNeighborhoods(customer, num)**
+
+This method takes a customer string as a parameter, and takes an optional num parameter which will default to 1 if not included.
+This method returns an ordered array that shows the num closest relative distances different customers are from the listed customer
+, along with the customers who are that distance away.  The customerMatrix is used to find this relative distance.  Each entry in
+ the returned array is an object, with a single key referring to a distance.  The corresponding value for that distance key is an
+ array filled with all customers who are that distance away from the listed customer.
+
+rec.nearestNeighborhoops('Steve', 4)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.nearestProductNeighborhoods" id="apidoc.element.product-recommender.nearestProductNeighborhoods">
+        function <span class="apidocSignatureSpan">product-recommender.</span>nearestProductNeighborhoods
+        <span class="apidocSignatureSpan">(name, num)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nearestProductNeighborhoods = function (name, num){
+  return helpers._findNearestNeighborhoods(name, num, 'products');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    rec.nearestProducts('shoes', 2)
+
+**nearestProductNeighborhoods(product, num)**
+
+This method takes a product string and an optional num parameter.  This method behaves similarly to the nearestNeighborhoods method
+, but instead of searching for the closest customers to a listed customer, it looks for the closest products to a listed product
+.
+
+    rec.<span class="apidocCodeKeywordSpan">nearestProductNeighborhoods</span>('shoes', 2)
+
+[API](#use)
+
+## 3.  &lt;a name='vars' href='#'/&gt; Recommendation Variables
+
+The recommendation variables hold the fine-grained results from my product recommendation algorithm.  These results can be accessed
+ overall by the results variable, or can be broken into various categories.  To access a recommendation variable, one would call
+ the getRecVariable method, passing the desired variable name in as a key.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.nearestProducts" id="apidoc.element.product-recommender.nearestProducts">
+        function <span class="apidocSignatureSpan">product-recommender.</span>nearestProducts
+        <span class="apidocSignatureSpan">(name, num, overflow)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nearestProducts = function (name, num, overflow){
+  return helpers._findNearestNeighbors(name, num, 'products', overflow);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.nearestNeighborhoops('Steve', 4)
+
+**nearestProducts(product, num, overflow)**
+
+This method takes a product string as well as optional nums and overflow paremeters.  The method behaves similarly to nearestNeighbors
+, but instead of finding the closest customers to a particular customers, it finds the products most similar to the listed product
+.
+
+rec.<span class="apidocCodeKeywordSpan">nearestProducts</span>('shoes', 2)
+
+**nearestProductNeighborhoods(product, num)**
+
+This method takes a product string and an optional num parameter.  This method behaves similarly to the nearestNeighborhoods method
+, but instead of searching for the closest customers to a listed customer, it looks for the closest products to a listed product
+.
+
+rec.nearestProductNeighborhoods('shoes', 2)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.pastCustomerRecommendations" id="apidoc.element.product-recommender.pastCustomerRecommendations">
+        function <span class="apidocSignatureSpan">product-recommender.</span>pastCustomerRecommendations
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pastCustomerRecommendations = function (name){
+  helpers._nameChecker(name);
+  helpers._recVariableChecker();
+  return rec.pastRecommendations[name];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.powerRecommendation" id="apidoc.element.product-recommender.powerRecommendation">
+        function <span class="apidocSignatureSpan">product-recommender.</span>powerRecommendation
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">powerRecommendation = function (name){
+  return this.recommender(name, rec.powerRecMatrix);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.recommendByProduct('Steve', 'shoes')
+
+**powerRecommendation(customer)**
+
+This method creates a recommendation for a particular customer, based on the rec.powerRecMatrix recommendation variable.  This matrix
+ only contains results from clusters with a higher silhouette score than customerClusters.  The matrix weighs the best results from
+ each power cluster, and ranks them.  This way, upon calling powerRecommendation, the highest perfoming result across all the power
+ clusters is returned.
+
+rec.<span class="apidocCodeKeywordSpan">powerRecommendation</span>('Steve')
+
+**pastCustomerRecommendations(customer)**
+
+This method returns an object that reveals which products have been recommended to customers through the different recommendation
+ analytics methods.  To check if a product has been recommended, use the product's name as a key on the object.  If the value
+ returned for that product key is true, the product has been recommended to listed customer.  If the value returned is undefined
+, the product has not been recommended yet to that customer.
+
+rec.pastCustomerRecommendatons('Steve')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.recommendByProduct" id="apidoc.element.product-recommender.recommendByProduct">
+        function <span class="apidocSignatureSpan">product-recommender.</span>recommendByProduct
+        <span class="apidocSignatureSpan">(name, product)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">recommendByProduct = function (name, product){
+  var matrix;
+  if(product === undefined){
+    matrix = rec.recommendationMatrix;
+  }
+  else{
+    index = helpers._productClusterFinder(product);
+    matrix = rec.subClustersHelpers[index][6];
+  }
+  return this.recommender(name, matrix);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.recommender('Steve', matrix)
+
+**recommendByProduct(customer, product)**
+
+This method takes a customer string and a product string as parameters.  The method then determines which product group the product
+ belongs to, and accesses the proper recommendation matrix based on that product group.  This custom recommendation matrix is then
+ used to return a product more focused on the customers buying patterns in relation the input product.
+
+rec.<span class="apidocCodeKeywordSpan">recommendByProduct</span>('Steve', 'shoes')
+
+**powerRecommendation(customer)**
+
+This method creates a recommendation for a particular customer, based on the rec.powerRecMatrix recommendation variable.  This matrix
+ only contains results from clusters with a higher silhouette score than customerClusters.  The matrix weighs the best results from
+ each power cluster, and ranks them.  This way, upon calling powerRecommendation, the highest perfoming result across all the power
+ clusters is returned.
+
+rec.powerRecommendation('Steve')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.recommender" id="apidoc.element.product-recommender.recommender">
+        function <span class="apidocSignatureSpan">product-recommender.</span>recommender
+        <span class="apidocSignatureSpan">(name, matrix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">recommender = function (name, matrix){
+  matrix = matrix || rec.recommendationMatrix;
+  helpers._nameChecker(name);
+  helpers._recVariableChecker();
+  var recommendation = matrix[rec.customersMap[name]].pop();
+  var attraction = Object.keys(recommendation)[0];
+  var product = recommendation[attraction];
+  if(rec.pastRecommendations[name][product] === true){
+    return this.recommender(name,matrix);
+  } else{
+    rec.pastRecommendations[name][product] = true;
+  }
+  return product;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+**recommender(customer, recMatrix)**
+
+This method accepts inputs of a customer string from the customer array and the optional input of a recommendation matrix.  The
+method considers the input customer's row from the recommendation matrix and pops off the product that my algorithm has determined
+ is the strongest recommendation in that group.  The recommended product is returned.
+
+The recommendation matrix parameter allows the more custom recommendation matrices built around buying trends in related product
+ groups to be used instead of the default matrix.  If a user buys a pair of shoes, he may have a certain taste in products similar
+ to shoes that is different than his taste in other areas.  By placing the recommendation matrix concerned with the shoe products
+ in the recommender method, the recommendation can be fine tuned based on the reality that the user recently bought shoes.  With
+ this custom matrix parameter, one can choose which product group of interest one wants the recommendation tailored towards.
+
+rec.<span class="apidocCodeKeywordSpan">recommender</span>('Steve', matrix)
+
+**recommendByProduct(customer, product)**
+
+This method takes a customer string and a product string as parameters.  The method then determines which product group the product
+ belongs to, and accesses the proper recommendation matrix based on that product group.  This custom recommendation matrix is then
+ used to return a product more focused on the customers buying patterns in relation the input product.
+
+rec.recommendByProduct('Steve', 'shoes')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.relatedCustomers" id="apidoc.element.product-recommender.relatedCustomers">
+        function <span class="apidocSignatureSpan">product-recommender.</span>relatedCustomers
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">relatedCustomers = function (name){
+  var cluster = this.getCustomerCluster(name);
+  cluster.splice(cluster.indexOf(name), 1);
+  return cluster;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.getProductCluster('shoes')
+
+**relatedCustomers(customer)**
+
+This method accepts a customer string as a parameter and returns an array of customers with similar purchase histories based on
+clustering.  This result returns the members of that customer's global cluster group, excluding the input customer.  To investigate
+ more focused groups based on certain product patterns, please use the the relatedCustomersByProduct method.
+
+rec.<span class="apidocCodeKeywordSpan">relatedCustomers</span>('Steve')
+
+**relatedCustomersByProduct(customer, product)**
+
+This method takes a customer string and product string as a parameter. Based on the input product, a cluster is selected that reflects
+ the customer's taste in relation to that product.  The method returns members of that cluster, excluding the input customer
+.  These customers have similar buying patterns with the input customer in terms of products similar to the product parameter.
+
+rec.relatedCustomersByProduct('Steve', 'shoes')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.relatedCustomersByProduct" id="apidoc.element.product-recommender.relatedCustomersByProduct">
+        function <span class="apidocSignatureSpan">product-recommender.</span>relatedCustomersByProduct
+        <span class="apidocSignatureSpan">(name, product)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">relatedCustomersByProduct = function (name, product){
+  var related = this.getCustomerClusterByProduct(name, product);
+  related.splice(related.indexOf(name), 1);
+  return related;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.relatedCustomers('Steve')
+
+**relatedCustomersByProduct(customer, product)**
+
+This method takes a customer string and product string as a parameter. Based on the input product, a cluster is selected that reflects
+ the customer's taste in relation to that product.  The method returns members of that cluster, excluding the input customer
+.  These customers have similar buying patterns with the input customer in terms of products similar to the product parameter.
+
+rec.<span class="apidocCodeKeywordSpan">relatedCustomersByProduct</span>('Steve', 'shoes')
+
+**relatedProducts(product)**
+
+This method takes a product string as a parameter.  The method returns an array of products my algorithm has judged to be similar
+ based on the aggregate purchase history of my customers.  The returned products are in the same product cluster as the input product
+, excluding the input product.
+
+rec.relatedProducts('shoes')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.relatedProducts" id="apidoc.element.product-recommender.relatedProducts">
+        function <span class="apidocSignatureSpan">product-recommender.</span>relatedProducts
+        <span class="apidocSignatureSpan">(product)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">relatedProducts = function (product){
+  var cluster = this.getProductCluster(product);
+  cluster.splice(cluster.indexOf(product), 1);
+  return cluster;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  rec.relatedCustomersByProduct('Steve', 'shoes')
+
+**relatedProducts(product)**
+
+This method takes a product string as a parameter.  The method returns an array of products my algorithm has judged to be similar
+ based on the aggregate purchase history of my customers.  The returned products are in the same product cluster as the input product
+, excluding the input product.
+
+  rec.<span class="apidocCodeKeywordSpan">relatedProducts</span>('shoes')
+
+**nearestNeighbors(customer, num, overflow)**
+
+This method takes a customer string as a parameter, and contains an optional num parameter that will default to 1 if it is not included
+ as an argument.  The optional overflow parameter defaults to true.   The method reveals which customers are the lowest distance
+ away from the listed customer.  An array is returned that contains at least the num closest customers to the listed customer.
+The array is ordered, so customers at a lower index are either closer or the same distance away as customers at a higher index.
+The array may be greater than length num if when index num has been reached there is a tie to who is the closest customer.  If the
+ overflow parameter is set to false, then the array will be limited to length num, even in the case of ties.
+
+  rec.nearestNeighbors('Steve', 4, false)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.setRecVariables" id="apidoc.element.product-recommender.setRecVariables">
+        function <span class="apidocSignatureSpan">product-recommender.</span>setRecVariables
+        <span class="apidocSignatureSpan">(matrix, cb, names, prods)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setRecVariables = function (matrix, cb, names, prods){
+  var path;
+  if(Array.isArray(matrix)){
+    path = false;
+  } else if (typeof matrix === 'string'){
+    path = true;
+  }
+  cb = cb || function(){};
+
+  names = JSON.stringify(names);
+  prods = JSON.stringify(prods);
+
+  var python = require('child_process').spawn(
+    'python',
+    [__dirname + '/../lib/exec.py', names, prods, matrix, path]);
+  output = '';
+  python.stdout.on('data', function(data){
+    output += data;
+  });
+  python.stdout.on('close', function(){
+    _buildRecVariables(output);
+    args = Array.prototype.slice.call(arguments,4);
+    cb.apply(this,args);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## 1.&lt;a name='learn' href='#'/&gt; Recommendation Engine
+
+This section consists of the setRecVariables method, which invokes the python recommendation engine.  When the algorithm has finished
+ streaming its results to node, the setRecVariables method then parses these results and assigns values to each of the recommendation
+ variables.  Whenever one wants a fresh reading of the recommendation engine's analysis, one simply needs to run setRecVariables
+ method again and the recommendation variables will be set to the values of the latest analysis.
+
+The setRecVariables method takes four parameters.  Any additional arguments will be added as arguments to the callback parameter
+.
+
+rec.<span class="apidocCodeKeywordSpan">setRecVariables</span>(history, callback, names, products)
+
+**history**
+
+The history argument contains either a matrix or a string that references the directory structure of a file containing a matrix.
+A matrix is a 2d-array.  Each entry in the outer array contains the purchase history of an individual customer.  The length of the
+ outer array is the same length as the names array below, so each customer in the data set is represented in the history parameter
+.  The length of each inner array is the length of the products array below.  Each inner array contains information on which product
+ from the products list each customer has purchased.  The order of products in the inner array should match the order in the products
+ array, so each column of the 2-D array refers to a particular product.
+
+var history = [ [1,0,0], [1,1,1], [0,1,1] ]
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.analytics" id="apidoc.module.product-recommender.analytics">module product-recommender.analytics</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.analytics.getCustomerCluster" id="apidoc.element.product-recommender.analytics.getCustomerCluster">
+        function <span class="apidocSignatureSpan">product-recommender.analytics.</span>getCustomerCluster
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCustomerCluster = function (name){
+  helpers._nameChecker(name);
+  helpers._recVariableChecker();
+  var index = rec.customerClusterHelpers[2][name];
+  var cluster = rec.customerClusters[index].slice();
+  return cluster;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.pastCustomerRecommendatons('Steve')
+
+**getCustomerCluster(customer)**
+
+This method accepts a customer string as a parameter and returns an array of the global customer cluster that contains that input
+ customer.  These customers in the returned cluster all have similar buying patterns across all products.
+
+rec.<span class="apidocCodeKeywordSpan">getCustomerCluster</span>('Steve')
+
+**getCustomerClusterByProducts(customer, product)**
+
+This method accepts a customer string and product string as parameters and returns a cluster that is chosen based on the input customer
+'s buying trends in relation to products similar to the input product.  This cluster is an array that contains customer names
+, including the input customer.
+
+rec.getCustomerClustersByProducts('Steve', 'shoes')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.analytics.getCustomerClusterByProduct" id="apidoc.element.product-recommender.analytics.getCustomerClusterByProduct">
+        function <span class="apidocSignatureSpan">product-recommender.analytics.</span>getCustomerClusterByProduct
+        <span class="apidocSignatureSpan">(name, product)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCustomerClusterByProduct = function (name, product){
+  helpers._nameChecker(name);
+  helpers._productChecker(product);
+  helpers._recVariableChecker();
+  var subClustIndex = helpers._productClusterFinder(product);
+  var map = rec.subClustersHelpers[index][2];
+  var cluster = rec.subClusters[index];
+  var related = cluster[map[name]].slice();
+  return related;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Analytics.relatedCustomers = function(name){
+var cluster = this.getCustomerCluster(name);
+cluster.splice(cluster.indexOf(name), 1);
+return cluster;
+};
+
+Analytics.relatedCustomersByProduct = function(name, product){
+var related = this.<span class="apidocCodeKeywordSpan">getCustomerClusterByProduct</span>(name, product);
+related.splice(related.indexOf(name), 1);
+return related;
+};
+
+Analytics.relatedProducts = function(product){
+var cluster = this.getProductCluster(product);
+cluster.splice(cluster.indexOf(product), 1);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.analytics.getProductCluster" id="apidoc.element.product-recommender.analytics.getProductCluster">
+        function <span class="apidocSignatureSpan">product-recommender.analytics.</span>getProductCluster
+        <span class="apidocSignatureSpan">(product)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getProductCluster = function (product){
+  var index = helpers._productClusterFinder(product);
+  var cluster = rec.productClusters[index].slice();
+  return cluster;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.getCustomerClustersByProducts('Steve', 'shoes')
+
+**getProductCluster(product)**
+
+This method accepts a product string as a parameter and returns an array of products similar to the input product, including the
+ input product.  This returned array is the product cluster that contains the input product.
+
+rec.<span class="apidocCodeKeywordSpan">getProductCluster</span>('shoes')
+
+**relatedCustomers(customer)**
+
+This method accepts a customer string as a parameter and returns an array of customers with similar purchase histories based on
+clustering.  This result returns the members of that customer's global cluster group, excluding the input customer.  To investigate
+ more focused groups based on certain product patterns, please use the the relatedCustomersByProduct method.
+
+rec.relatedCustomers('Steve')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.analytics.nearestNeighborhoods" id="apidoc.element.product-recommender.analytics.nearestNeighborhoods">
+        function <span class="apidocSignatureSpan">product-recommender.analytics.</span>nearestNeighborhoods
+        <span class="apidocSignatureSpan">(name, num)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nearestNeighborhoods = function (name, num){
+  return helpers._findNearestNeighborhoods(name, num, 'customers');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.analytics.nearestNeighbors" id="apidoc.element.product-recommender.analytics.nearestNeighbors">
+        function <span class="apidocSignatureSpan">product-recommender.analytics.</span>nearestNeighbors
+        <span class="apidocSignatureSpan">(name, num, overflow)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nearestNeighbors = function (name, num, overflow){
+  return helpers._findNearestNeighbors(name, num, 'customers', overflow);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.relatedProducts('shoes')
+
+**nearestNeighbors(customer, num, overflow)**
+
+This method takes a customer string as a parameter, and contains an optional num parameter that will default to 1 if it is not included
+ as an argument.  The optional overflow parameter defaults to true.   The method reveals which customers are the lowest distance
+ away from the listed customer.  An array is returned that contains at least the num closest customers to the listed customer.
+The array is ordered, so customers at a lower index are either closer or the same distance away as customers at a higher index.
+The array may be greater than length num if when index num has been reached there is a tie to who is the closest customer.  If the
+ overflow parameter is set to false, then the array will be limited to length num, even in the case of ties.
+
+rec.<span class="apidocCodeKeywordSpan">nearestNeighbors</span>('Steve', 4, false)
+
+**nearestNeighborhoods(customer, num)**
+
+This method takes a customer string as a parameter, and takes an optional num parameter which will default to 1 if not included.
+This method returns an ordered array that shows the num closest relative distances different customers are from the listed customer
+, along with the customers who are that distance away.  The customerMatrix is used to find this relative distance.  Each entry in
+ the returned array is an object, with a single key referring to a distance.  The corresponding value for that distance key is an
+ array filled with all customers who are that distance away from the listed customer.
+
+rec.nearestNeighborhoops('Steve', 4)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.analytics.nearestProductNeighborhoods" id="apidoc.element.product-recommender.analytics.nearestProductNeighborhoods">
+        function <span class="apidocSignatureSpan">product-recommender.analytics.</span>nearestProductNeighborhoods
+        <span class="apidocSignatureSpan">(name, num)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nearestProductNeighborhoods = function (name, num){
+  return helpers._findNearestNeighborhoods(name, num, 'products');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    rec.nearestProducts('shoes', 2)
+
+**nearestProductNeighborhoods(product, num)**
+
+This method takes a product string and an optional num parameter.  This method behaves similarly to the nearestNeighborhoods method
+, but instead of searching for the closest customers to a listed customer, it looks for the closest products to a listed product
+.
+
+    rec.<span class="apidocCodeKeywordSpan">nearestProductNeighborhoods</span>('shoes', 2)
+
+[API](#use)
+
+## 3.  &lt;a name='vars' href='#'/&gt; Recommendation Variables
+
+The recommendation variables hold the fine-grained results from my product recommendation algorithm.  These results can be accessed
+ overall by the results variable, or can be broken into various categories.  To access a recommendation variable, one would call
+ the getRecVariable method, passing the desired variable name in as a key.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.analytics.nearestProducts" id="apidoc.element.product-recommender.analytics.nearestProducts">
+        function <span class="apidocSignatureSpan">product-recommender.analytics.</span>nearestProducts
+        <span class="apidocSignatureSpan">(name, num, overflow)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nearestProducts = function (name, num, overflow){
+  return helpers._findNearestNeighbors(name, num, 'products', overflow);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.nearestNeighborhoops('Steve', 4)
+
+**nearestProducts(product, num, overflow)**
+
+This method takes a product string as well as optional nums and overflow paremeters.  The method behaves similarly to nearestNeighbors
+, but instead of finding the closest customers to a particular customers, it finds the products most similar to the listed product
+.
+
+rec.<span class="apidocCodeKeywordSpan">nearestProducts</span>('shoes', 2)
+
+**nearestProductNeighborhoods(product, num)**
+
+This method takes a product string and an optional num parameter.  This method behaves similarly to the nearestNeighborhoods method
+, but instead of searching for the closest customers to a listed customer, it looks for the closest products to a listed product
+.
+
+rec.nearestProductNeighborhoods('shoes', 2)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.analytics.pastCustomerRecommendations" id="apidoc.element.product-recommender.analytics.pastCustomerRecommendations">
+        function <span class="apidocSignatureSpan">product-recommender.analytics.</span>pastCustomerRecommendations
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pastCustomerRecommendations = function (name){
+  helpers._nameChecker(name);
+  helpers._recVariableChecker();
+  return rec.pastRecommendations[name];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.analytics.powerRecommendation" id="apidoc.element.product-recommender.analytics.powerRecommendation">
+        function <span class="apidocSignatureSpan">product-recommender.analytics.</span>powerRecommendation
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">powerRecommendation = function (name){
+  return this.recommender(name, rec.powerRecMatrix);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.recommendByProduct('Steve', 'shoes')
+
+**powerRecommendation(customer)**
+
+This method creates a recommendation for a particular customer, based on the rec.powerRecMatrix recommendation variable.  This matrix
+ only contains results from clusters with a higher silhouette score than customerClusters.  The matrix weighs the best results from
+ each power cluster, and ranks them.  This way, upon calling powerRecommendation, the highest perfoming result across all the power
+ clusters is returned.
+
+rec.<span class="apidocCodeKeywordSpan">powerRecommendation</span>('Steve')
+
+**pastCustomerRecommendations(customer)**
+
+This method returns an object that reveals which products have been recommended to customers through the different recommendation
+ analytics methods.  To check if a product has been recommended, use the product's name as a key on the object.  If the value
+ returned for that product key is true, the product has been recommended to listed customer.  If the value returned is undefined
+, the product has not been recommended yet to that customer.
+
+rec.pastCustomerRecommendatons('Steve')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.analytics.recommendByProduct" id="apidoc.element.product-recommender.analytics.recommendByProduct">
+        function <span class="apidocSignatureSpan">product-recommender.analytics.</span>recommendByProduct
+        <span class="apidocSignatureSpan">(name, product)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">recommendByProduct = function (name, product){
+  var matrix;
+  if(product === undefined){
+    matrix = rec.recommendationMatrix;
+  }
+  else{
+    index = helpers._productClusterFinder(product);
+    matrix = rec.subClustersHelpers[index][6];
+  }
+  return this.recommender(name, matrix);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.recommender('Steve', matrix)
+
+**recommendByProduct(customer, product)**
+
+This method takes a customer string and a product string as parameters.  The method then determines which product group the product
+ belongs to, and accesses the proper recommendation matrix based on that product group.  This custom recommendation matrix is then
+ used to return a product more focused on the customers buying patterns in relation the input product.
+
+rec.<span class="apidocCodeKeywordSpan">recommendByProduct</span>('Steve', 'shoes')
+
+**powerRecommendation(customer)**
+
+This method creates a recommendation for a particular customer, based on the rec.powerRecMatrix recommendation variable.  This matrix
+ only contains results from clusters with a higher silhouette score than customerClusters.  The matrix weighs the best results from
+ each power cluster, and ranks them.  This way, upon calling powerRecommendation, the highest perfoming result across all the power
+ clusters is returned.
+
+rec.powerRecommendation('Steve')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.analytics.recommender" id="apidoc.element.product-recommender.analytics.recommender">
+        function <span class="apidocSignatureSpan">product-recommender.analytics.</span>recommender
+        <span class="apidocSignatureSpan">(name, matrix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">recommender = function (name, matrix){
+  matrix = matrix || rec.recommendationMatrix;
+  helpers._nameChecker(name);
+  helpers._recVariableChecker();
+  var recommendation = matrix[rec.customersMap[name]].pop();
+  var attraction = Object.keys(recommendation)[0];
+  var product = recommendation[attraction];
+  if(rec.pastRecommendations[name][product] === true){
+    return this.recommender(name,matrix);
+  } else{
+    rec.pastRecommendations[name][product] = true;
+  }
+  return product;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+**recommender(customer, recMatrix)**
+
+This method accepts inputs of a customer string from the customer array and the optional input of a recommendation matrix.  The
+method considers the input customer's row from the recommendation matrix and pops off the product that my algorithm has determined
+ is the strongest recommendation in that group.  The recommended product is returned.
+
+The recommendation matrix parameter allows the more custom recommendation matrices built around buying trends in related product
+ groups to be used instead of the default matrix.  If a user buys a pair of shoes, he may have a certain taste in products similar
+ to shoes that is different than his taste in other areas.  By placing the recommendation matrix concerned with the shoe products
+ in the recommender method, the recommendation can be fine tuned based on the reality that the user recently bought shoes.  With
+ this custom matrix parameter, one can choose which product group of interest one wants the recommendation tailored towards.
+
+rec.<span class="apidocCodeKeywordSpan">recommender</span>('Steve', matrix)
+
+**recommendByProduct(customer, product)**
+
+This method takes a customer string and a product string as parameters.  The method then determines which product group the product
+ belongs to, and accesses the proper recommendation matrix based on that product group.  This custom recommendation matrix is then
+ used to return a product more focused on the customers buying patterns in relation the input product.
+
+rec.recommendByProduct('Steve', 'shoes')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.analytics.relatedCustomers" id="apidoc.element.product-recommender.analytics.relatedCustomers">
+        function <span class="apidocSignatureSpan">product-recommender.analytics.</span>relatedCustomers
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">relatedCustomers = function (name){
+  var cluster = this.getCustomerCluster(name);
+  cluster.splice(cluster.indexOf(name), 1);
+  return cluster;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.getProductCluster('shoes')
+
+**relatedCustomers(customer)**
+
+This method accepts a customer string as a parameter and returns an array of customers with similar purchase histories based on
+clustering.  This result returns the members of that customer's global cluster group, excluding the input customer.  To investigate
+ more focused groups based on certain product patterns, please use the the relatedCustomersByProduct method.
+
+rec.<span class="apidocCodeKeywordSpan">relatedCustomers</span>('Steve')
+
+**relatedCustomersByProduct(customer, product)**
+
+This method takes a customer string and product string as a parameter. Based on the input product, a cluster is selected that reflects
+ the customer's taste in relation to that product.  The method returns members of that cluster, excluding the input customer
+.  These customers have similar buying patterns with the input customer in terms of products similar to the product parameter.
+
+rec.relatedCustomersByProduct('Steve', 'shoes')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.analytics.relatedCustomersByProduct" id="apidoc.element.product-recommender.analytics.relatedCustomersByProduct">
+        function <span class="apidocSignatureSpan">product-recommender.analytics.</span>relatedCustomersByProduct
+        <span class="apidocSignatureSpan">(name, product)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">relatedCustomersByProduct = function (name, product){
+  var related = this.getCustomerClusterByProduct(name, product);
+  related.splice(related.indexOf(name), 1);
+  return related;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.relatedCustomers('Steve')
+
+**relatedCustomersByProduct(customer, product)**
+
+This method takes a customer string and product string as a parameter. Based on the input product, a cluster is selected that reflects
+ the customer's taste in relation to that product.  The method returns members of that cluster, excluding the input customer
+.  These customers have similar buying patterns with the input customer in terms of products similar to the product parameter.
+
+rec.<span class="apidocCodeKeywordSpan">relatedCustomersByProduct</span>('Steve', 'shoes')
+
+**relatedProducts(product)**
+
+This method takes a product string as a parameter.  The method returns an array of products my algorithm has judged to be similar
+ based on the aggregate purchase history of my customers.  The returned products are in the same product cluster as the input product
+, excluding the input product.
+
+rec.relatedProducts('shoes')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.analytics.relatedProducts" id="apidoc.element.product-recommender.analytics.relatedProducts">
+        function <span class="apidocSignatureSpan">product-recommender.analytics.</span>relatedProducts
+        <span class="apidocSignatureSpan">(product)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">relatedProducts = function (product){
+  var cluster = this.getProductCluster(product);
+  cluster.splice(cluster.indexOf(product), 1);
+  return cluster;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  rec.relatedCustomersByProduct('Steve', 'shoes')
+
+**relatedProducts(product)**
+
+This method takes a product string as a parameter.  The method returns an array of products my algorithm has judged to be similar
+ based on the aggregate purchase history of my customers.  The returned products are in the same product cluster as the input product
+, excluding the input product.
+
+  rec.<span class="apidocCodeKeywordSpan">relatedProducts</span>('shoes')
+
+**nearestNeighbors(customer, num, overflow)**
+
+This method takes a customer string as a parameter, and contains an optional num parameter that will default to 1 if it is not included
+ as an argument.  The optional overflow parameter defaults to true.   The method reveals which customers are the lowest distance
+ away from the listed customer.  An array is returned that contains at least the num closest customers to the listed customer.
+The array is ordered, so customers at a lower index are either closer or the same distance away as customers at a higher index.
+The array may be greater than length num if when index num has been reached there is a tie to who is the closest customer.  If the
+ overflow parameter is set to false, then the array will be limited to length num, even in the case of ties.
+
+  rec.nearestNeighbors('Steve', 4, false)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.engine" id="apidoc.module.product-recommender.engine">module product-recommender.engine</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.engine.setRecVariables" id="apidoc.element.product-recommender.engine.setRecVariables">
+        function <span class="apidocSignatureSpan">product-recommender.engine.</span>setRecVariables
+        <span class="apidocSignatureSpan">(matrix, cb, names, prods)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setRecVariables = function (matrix, cb, names, prods){
+  var path;
+  if(Array.isArray(matrix)){
+    path = false;
+  } else if (typeof matrix === 'string'){
+    path = true;
+  }
+  cb = cb || function(){};
+
+  names = JSON.stringify(names);
+  prods = JSON.stringify(prods);
+
+  var python = require('child_process').spawn(
+    'python',
+    [__dirname + '/../lib/exec.py', names, prods, matrix, path]);
+  output = '';
+  python.stdout.on('data', function(data){
+    output += data;
+  });
+  python.stdout.on('close', function(){
+    _buildRecVariables(output);
+    args = Array.prototype.slice.call(arguments,4);
+    cb.apply(this,args);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## 1.&lt;a name='learn' href='#'/&gt; Recommendation Engine
+
+This section consists of the setRecVariables method, which invokes the python recommendation engine.  When the algorithm has finished
+ streaming its results to node, the setRecVariables method then parses these results and assigns values to each of the recommendation
+ variables.  Whenever one wants a fresh reading of the recommendation engine's analysis, one simply needs to run setRecVariables
+ method again and the recommendation variables will be set to the values of the latest analysis.
+
+The setRecVariables method takes four parameters.  Any additional arguments will be added as arguments to the callback parameter
+.
+
+rec.<span class="apidocCodeKeywordSpan">setRecVariables</span>(history, callback, names, products)
+
+**history**
+
+The history argument contains either a matrix or a string that references the directory structure of a file containing a matrix.
+A matrix is a 2d-array.  Each entry in the outer array contains the purchase history of an individual customer.  The length of the
+ outer array is the same length as the names array below, so each customer in the data set is represented in the history parameter
+.  The length of each inner array is the length of the products array below.  Each inner array contains information on which product
+ from the products list each customer has purchased.  The order of products in the inner array should match the order in the products
+ array, so each column of the 2-D array refers to a particular product.
+
+var history = [ [1,0,0], [1,1,1], [0,1,1] ]
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.getCustomerCluster" id="apidoc.module.product-recommender.getCustomerCluster">module product-recommender.getCustomerCluster</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.getCustomerCluster.getCustomerCluster" id="apidoc.element.product-recommender.getCustomerCluster.getCustomerCluster">
+        function <span class="apidocSignatureSpan">product-recommender.</span>getCustomerCluster
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCustomerCluster = function (name){
+  helpers._nameChecker(name);
+  helpers._recVariableChecker();
+  var index = rec.customerClusterHelpers[2][name];
+  var cluster = rec.customerClusters[index].slice();
+  return cluster;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.pastCustomerRecommendatons('Steve')
+
+**getCustomerCluster(customer)**
+
+This method accepts a customer string as a parameter and returns an array of the global customer cluster that contains that input
+ customer.  These customers in the returned cluster all have similar buying patterns across all products.
+
+rec.<span class="apidocCodeKeywordSpan">getCustomerCluster</span>('Steve')
+
+**getCustomerClusterByProducts(customer, product)**
+
+This method accepts a customer string and product string as parameters and returns a cluster that is chosen based on the input customer
+'s buying trends in relation to products similar to the input product.  This cluster is an array that contains customer names
+, including the input customer.
+
+rec.getCustomerClustersByProducts('Steve', 'shoes')
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.getCustomerClusterByProduct" id="apidoc.module.product-recommender.getCustomerClusterByProduct">module product-recommender.getCustomerClusterByProduct</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.getCustomerClusterByProduct.getCustomerClusterByProduct" id="apidoc.element.product-recommender.getCustomerClusterByProduct.getCustomerClusterByProduct">
+        function <span class="apidocSignatureSpan">product-recommender.</span>getCustomerClusterByProduct
+        <span class="apidocSignatureSpan">(name, product)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCustomerClusterByProduct = function (name, product){
+  helpers._nameChecker(name);
+  helpers._productChecker(product);
+  helpers._recVariableChecker();
+  var subClustIndex = helpers._productClusterFinder(product);
+  var map = rec.subClustersHelpers[index][2];
+  var cluster = rec.subClusters[index];
+  var related = cluster[map[name]].slice();
+  return related;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Analytics.relatedCustomers = function(name){
+var cluster = this.getCustomerCluster(name);
+cluster.splice(cluster.indexOf(name), 1);
+return cluster;
+};
+
+Analytics.relatedCustomersByProduct = function(name, product){
+var related = this.<span class="apidocCodeKeywordSpan">getCustomerClusterByProduct</span>(name, product);
+related.splice(related.indexOf(name), 1);
+return related;
+};
+
+Analytics.relatedProducts = function(product){
+var cluster = this.getProductCluster(product);
+cluster.splice(cluster.indexOf(product), 1);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.getProductCluster" id="apidoc.module.product-recommender.getProductCluster">module product-recommender.getProductCluster</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.getProductCluster.getProductCluster" id="apidoc.element.product-recommender.getProductCluster.getProductCluster">
+        function <span class="apidocSignatureSpan">product-recommender.</span>getProductCluster
+        <span class="apidocSignatureSpan">(product)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getProductCluster = function (product){
+  var index = helpers._productClusterFinder(product);
+  var cluster = rec.productClusters[index].slice();
+  return cluster;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.getCustomerClustersByProducts('Steve', 'shoes')
+
+**getProductCluster(product)**
+
+This method accepts a product string as a parameter and returns an array of products similar to the input product, including the
+ input product.  This returned array is the product cluster that contains the input product.
+
+rec.<span class="apidocCodeKeywordSpan">getProductCluster</span>('shoes')
+
+**relatedCustomers(customer)**
+
+This method accepts a customer string as a parameter and returns an array of customers with similar purchase histories based on
+clustering.  This result returns the members of that customer's global cluster group, excluding the input customer.  To investigate
+ more focused groups based on certain product patterns, please use the the relatedCustomersByProduct method.
+
+rec.relatedCustomers('Steve')
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.getRecKeys" id="apidoc.module.product-recommender.getRecKeys">module product-recommender.getRecKeys</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.getRecKeys.getRecKeys" id="apidoc.element.product-recommender.getRecKeys.getRecKeys">
+        function <span class="apidocSignatureSpan">product-recommender.</span>getRecKeys
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRecKeys = function (){
+  return Object.keys(rec);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The recommendation variables hold the fine-grained results from my product recommendation algorithm.  These results can be accessed
+ overall by the results variable, or can be broken into various categories.  To access a recommendation variable, one would call
+ the getRecVariable method, passing the desired variable name in as a key.
+
+    rec.getRecVariable(key);
+
+To receive an array containing all of the recommendation keys, one can call the getRecKeys() method.
+
+    rec.<span class="apidocCodeKeywordSpan">getRecKeys</span>();
+
+To manually set a value on a recommendation variable, use the loadRecVariable() method.  This method takes two parameterss, a string
+ that signifies the name of the recommendation variable to change, and a value which will be set to that recommendation variable
+. Any value entered here to a recommendation variable could cause errors in the module if it is not the same format the recommendation
+ variable typically would be after executing setRecVariables.  Also, altering some recommendation variables but not others could
+ lead to outcomes that are not consistent to one set of the recommendation engine's analysis.  Could be used to load past results
+ from the recommendation engine.  Use this method with caution.
+
+    rec.loadRecVariable(key, value)
+
+To manually set several values on a recommendation variable, use the loadRecVariables method.  The first parameter is an array of
+ strings filled with the name of recommendation variables to change. The second parameter is an array of values which to assign
+to the previous mentioned recommendation variables.  The value that is in the same index as the recommendation variable name in
+the key array will be assigned to that recommendation variable.  If the key and value arrays are of different lengths, the code
+will throw an error.  Could be used to load past results from the recommendation engine.  Again, use with caution.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.getRecVariable" id="apidoc.module.product-recommender.getRecVariable">module product-recommender.getRecVariable</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.getRecVariable.getRecVariable" id="apidoc.element.product-recommender.getRecVariable.getRecVariable">
+        function <span class="apidocSignatureSpan">product-recommender.</span>getRecVariable
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRecVariable = function (key){
+  if(rec[key] === undefined){
+    throw new Error('not a valid recommendation variable');
+  } else if(rec[key] === null){
+    throw new Error('variable is null.  please run setRecVariables');
+  } else{
+    return rec[key];
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+[API](#use)
+
+## 3.  &lt;a name='vars' href='#'/&gt; Recommendation Variables
+
+The recommendation variables hold the fine-grained results from my product recommendation algorithm.  These results can be accessed
+ overall by the results variable, or can be broken into various categories.  To access a recommendation variable, one would call
+ the getRecVariable method, passing the desired variable name in as a key.
+
+    rec.<span class="apidocCodeKeywordSpan">getRecVariable</span>(key);
+
+To receive an array containing all of the recommendation keys, one can call the getRecKeys() method.
+
+    rec.getRecKeys();
+
+To manually set a value on a recommendation variable, use the loadRecVariable() method.  This method takes two parameterss, a string
+ that signifies the name of the recommendation variable to change, and a value which will be set to that recommendation variable
+. Any value entered here to a recommendation variable could cause errors in the module if it is not the same format the recommendation
+ variable typically would be after executing setRecVariables.  Also, altering some recommendation variables but not others could
+ lead to outcomes that are not consistent to one set of the recommendation engine's analysis.  Could be used to load past results
+ from the recommendation engine.  Use this method with caution.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.helpers" id="apidoc.module.product-recommender.helpers">module product-recommender.helpers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.helpers._binarySearch" id="apidoc.element.product-recommender.helpers._binarySearch">
+        function <span class="apidocSignatureSpan">product-recommender.helpers.</span>_binarySearch
+        <span class="apidocSignatureSpan">(item, arr, low, high)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_binarySearch = function (item, arr, low, high){
+  low = low || 0;
+  high = high || arr.length;
+  var median = Math.floor((low+high)/2);
+  if(low === high){
+    return high;
+  }
+  else if(item &lt; arr[median]){
+    if(low === median){
+      return low;
+    }
+    return this._binarySearch(item, arr, low, median);
+  }
+  else if(item &gt; arr[median]){
+    if(low === high-1){
+      return this._binarySearch(item, arr, low+1, high);
+    }
+    return this._binarySearch(item, arr, median, high);
+  }
+  else{
+    return median;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var results = [];
+var ind;
+var obj;
+
+dists.forEach(function(dist, i){
+  if(index !== i){
+    if(similarity.length &lt; num || dist &lt; similarity[similarity.length-1]){
+      ind = this.<span class="apidocCodeKeywordSpan">_binarySearch</span>(dist, similarity);
+      if(similarity[ind] === dist){
+        results[ind][dist].push(list[i]);
+      } else{
+        if(dist &lt; similarity[similarity.length-1] &amp;&amp; similarity.length &gt;= num){
+          similarity.pop();
+          results.pop();
+        }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.helpers._extend" id="apidoc.element.product-recommender.helpers._extend">
+        function <span class="apidocSignatureSpan">product-recommender.helpers.</span>_extend
+        <span class="apidocSignatureSpan">(obj1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_extend = function (obj1){
+  args = Array.prototype.slice.call(arguments, 1);
+  args.forEach(function(obj){
+    for(var key in obj){
+      obj1[key] = obj[key];
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var RecommendationEngine    = require('./node/engine');
+var Analytics = require('./node/analytics');
+var RecommendationVariables = require('./node/variables').GetSet;
+var helpers   = require('./node/helpers');
+
+var Recommender = {};
+
+helpers.<span class="apidocCodeKeywordSpan">_extend</span>(Recommender, RecommendationEngine, Analytics, RecommendationVariables
+);
+
+module.exports = Recommender;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.helpers._findNearestNeighborhoods" id="apidoc.element.product-recommender.helpers._findNearestNeighborhoods">
+        function <span class="apidocSignatureSpan">product-recommender.helpers.</span>_findNearestNeighborhoods
+        <span class="apidocSignatureSpan">(name, num, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_findNearestNeighborhoods = function (name, num, type){
+  var map;
+  var matrix;
+  var list;
+  if(type === 'customers'){
+    map = rec.customersMap;
+    matrix = rec.customerMatrix;
+    list = rec.customers;
+    this._nameChecker(name);
+  } else if(type === 'products'){
+    map = rec.productsMap;
+    matrix = rec.productMatrix;
+    list = rec.products;
+    this._productChecker(name);
+  } else{
+    throw new Error('Invalid type.  Find neighbors for customers or products.');
+  }
+  this._recVariableChecker();
+  num = num || 1;
+  if(typeof(num) !== 'number' || num%1 !== 0){
+    throw new Error('second parameter should be an integer');
+  }
+  var index = map[name];
+  var dists = matrix[index];
+  var similarity = [];
+  var results = [];
+  var ind;
+  var obj;
+
+  dists.forEach(function(dist, i){
+    if(index !== i){
+      if(similarity.length &lt; num || dist &lt; similarity[similarity.length-1]){
+        ind = this._binarySearch(dist, similarity);
+        if(similarity[ind] === dist){
+          results[ind][dist].push(list[i]);
+        } else{
+          if(dist &lt; similarity[similarity.length-1] &amp;&amp; similarity.length &gt;= num){
+            similarity.pop();
+            results.pop();
+          }
+          similarity.splice(ind, 0, dist);
+          obj  = {};
+          obj[dist] = [list[i]];
+          results.splice(ind, 0, obj);
+        }
+      }
+      else if (dist === similarity[similarity.length-1]){
+        results[similarity.length-1][dist].push(list[i]);
+      }
+    }
+  }.bind(this));
+
+  return results;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+Analytics.nearestNeighbors = function(name, num, overflow){
+  return helpers._findNearestNeighbors(name, num, 'customers', overflow);
+};
+
+Analytics.nearestNeighborhoods = function(name, num){
+  return helpers.<span class="apidocCodeKeywordSpan">_findNearestNeighborhoods</span>(name, num, 'customers');
+};
+
+Analytics.nearestProducts = function(name, num, overflow){
+  return helpers._findNearestNeighbors(name, num, 'products', overflow);
+};
+
+Analytics.nearestProductNeighborhoods = function(name, num){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.helpers._findNearestNeighbors" id="apidoc.element.product-recommender.helpers._findNearestNeighbors">
+        function <span class="apidocSignatureSpan">product-recommender.helpers.</span>_findNearestNeighbors
+        <span class="apidocSignatureSpan">(name, num, type, overflow)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_findNearestNeighbors = function (name, num, type, overflow){
+  var results = [];
+  var i;
+  var neighborhood;
+  var neighbor;
+  num = num || 1;
+  if(overflow === undefined){
+    overflow = true;
+  }
+
+  var neighbors = this._findNearestNeighborhoods(name, num, type);
+  for(i = 0; i &lt; num; i++){
+    if(results.length &lt; num){
+      for(var j in neighbors[i]){
+          neighborhood = neighbors[i][j];
+        for(var k = 0; k &lt; neighborhood.length; k++){
+          neighbor = neighborhood[k];
+          results.push(neighbor);
+        }
+      }
+    } else {
+      break;
+    }
+  }
+
+  if(!overflow){
+    var len = results.length;
+    for(i = num; i &lt; len; i++){
+      results.pop();
+    }
+  }
+  return results;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Analytics.relatedProducts = function(product){
+  var cluster = this.getProductCluster(product);
+  cluster.splice(cluster.indexOf(product), 1);
+  return cluster;
+};
+
+Analytics.nearestNeighbors = function(name, num, overflow){
+  return helpers.<span class="apidocCodeKeywordSpan">_findNearestNeighbors</span>(name, num, 'customers', overflow);
+};
+
+Analytics.nearestNeighborhoods = function(name, num){
+  return helpers._findNearestNeighborhoods(name, num, 'customers');
+};
+
+Analytics.nearestProducts = function(name, num, overflow){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.helpers._nameChecker" id="apidoc.element.product-recommender.helpers._nameChecker">
+        function <span class="apidocSignatureSpan">product-recommender.helpers.</span>_nameChecker
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_nameChecker = function (name){
+  if(name === undefined || typeof(rec.customersMap[name]) !== 'number'){
+    throw new Error('invalid name. name does not exist in the data set.');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var rec = require('./variables').rec;
+var helpers = require('./helpers');
+var Analytics = {};
+
+Analytics.recommender = function(name, matrix){
+matrix = matrix || rec.recommendationMatrix;
+helpers.<span class="apidocCodeKeywordSpan">_nameChecker</span>(name);
+helpers._recVariableChecker();
+var recommendation = matrix[rec.customersMap[name]].pop();
+var attraction = Object.keys(recommendation)[0];
+var product = recommendation[attraction];
+if(rec.pastRecommendations[name][product] === true){
+  return this.recommender(name,matrix);
+} else{
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.helpers._productChecker" id="apidoc.element.product-recommender.helpers._productChecker">
+        function <span class="apidocSignatureSpan">product-recommender.helpers.</span>_productChecker
+        <span class="apidocSignatureSpan">(product)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_productChecker = function (product){
+  if(product === undefined || typeof(rec.productsMap[product]) !== 'number'){
+    throw new Error('invalid product. product does not exist in the data set.');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var index = rec.customerClusterHelpers[2][name];
+  var cluster = rec.customerClusters[index].slice();
+  return cluster;
+};
+
+Analytics.getCustomerClusterByProduct = function(name, product){
+  helpers._nameChecker(name);
+  helpers.<span class="apidocCodeKeywordSpan">_productChecker</span>(product);
+  helpers._recVariableChecker();
+  var subClustIndex = helpers._productClusterFinder(product);
+  var map = rec.subClustersHelpers[index][2];
+  var cluster = rec.subClusters[index];
+  var related = cluster[map[name]].slice();
+  return related;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.helpers._productClusterFinder" id="apidoc.element.product-recommender.helpers._productClusterFinder">
+        function <span class="apidocSignatureSpan">product-recommender.helpers.</span>_productClusterFinder
+        <span class="apidocSignatureSpan">(product)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_productClusterFinder = function (product){
+  this._recVariableChecker();
+  this._productChecker(product);
+  var index = rec.productClustersMap[product];
+  return index;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Analytics.recommendByProduct = function(name, product){
+var matrix;
+if(product === undefined){
+  matrix = rec.recommendationMatrix;
+}
+else{
+  index = helpers.<span class="apidocCodeKeywordSpan">_productClusterFinder</span>(product);
+  matrix = rec.subClustersHelpers[index][6];
+}
+return this.recommender(name, matrix);
+};
+
+Analytics.powerRecommendation = function(name){
+return this.recommender(name, rec.powerRecMatrix);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.helpers._recVariableChecker" id="apidoc.element.product-recommender.helpers._recVariableChecker">
+        function <span class="apidocSignatureSpan">product-recommender.helpers.</span>_recVariableChecker
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_recVariableChecker = function (){
+  if (rec.results === 'null'){
+    throw new Error('recommendation variables are null. please run setRecVariables');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var rec = require('./variables').rec;
+var helpers = require('./helpers');
+var Analytics = {};
+
+Analytics.recommender = function(name, matrix){
+matrix = matrix || rec.recommendationMatrix;
+helpers._nameChecker(name);
+helpers.<span class="apidocCodeKeywordSpan">_recVariableChecker</span>();
+var recommendation = matrix[rec.customersMap[name]].pop();
+var attraction = Object.keys(recommendation)[0];
+var product = recommendation[attraction];
+if(rec.pastRecommendations[name][product] === true){
+  return this.recommender(name,matrix);
+} else{
+  rec.pastRecommendations[name][product] = true;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.loadRecVariable" id="apidoc.module.product-recommender.loadRecVariable">module product-recommender.loadRecVariable</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.loadRecVariable.loadRecVariable" id="apidoc.element.product-recommender.loadRecVariable.loadRecVariable">
+        function <span class="apidocSignatureSpan">product-recommender.</span>loadRecVariable
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadRecVariable = function (key, value){
+  if(rec[key] === undefined){
+    throw new Error('not a valid recommendation variable');
+  } else{
+    rec[key] = value;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+To receive an array containing all of the recommendation keys, one can call the getRecKeys() method.
+
+    rec.getRecKeys();
+
+To manually set a value on a recommendation variable, use the loadRecVariable() method.  This method takes two parameterss, a string
+ that signifies the name of the recommendation variable to change, and a value which will be set to that recommendation variable
+. Any value entered here to a recommendation variable could cause errors in the module if it is not the same format the recommendation
+ variable typically would be after executing setRecVariables.  Also, altering some recommendation variables but not others could
+ lead to outcomes that are not consistent to one set of the recommendation engine's analysis.  Could be used to load past results
+ from the recommendation engine.  Use this method with caution.
+
+    rec.<span class="apidocCodeKeywordSpan">loadRecVariable</span>(key, value)
+
+To manually set several values on a recommendation variable, use the loadRecVariables method.  The first parameter is an array of
+ strings filled with the name of recommendation variables to change. The second parameter is an array of values which to assign
+to the previous mentioned recommendation variables.  The value that is in the same index as the recommendation variable name in
+the key array will be assigned to that recommendation variable.  If the key and value arrays are of different lengths, the code
+will throw an error.  Could be used to load past results from the recommendation engine.  Again, use with caution.
+
+    rec.loadRecVariables(keys, values)
+
+Initially the recommendation variables will be set to null, until a call is made to launch the python recommendation engine.  Now
+, I will describe the recommendation variables.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.loadRecVariables" id="apidoc.module.product-recommender.loadRecVariables">module product-recommender.loadRecVariables</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.loadRecVariables.loadRecVariables" id="apidoc.element.product-recommender.loadRecVariables.loadRecVariables">
+        function <span class="apidocSignatureSpan">product-recommender.</span>loadRecVariables
+        <span class="apidocSignatureSpan">(keys, values)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadRecVariables = function (keys, values){
+  if(keys.length &gt; values.length){
+    throw new Error('Each key must have a value');
+  } else if (keys.length &lt; values.length){
+    throw new Error('Each value must have a key');
+  } else{
+    keys.forEach(function(key, i){
+      this.loadRecVariable(key, values[i]);
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+To manually set a value on a recommendation variable, use the loadRecVariable() method.  This method takes two parameterss, a string
+ that signifies the name of the recommendation variable to change, and a value which will be set to that recommendation variable
+. Any value entered here to a recommendation variable could cause errors in the module if it is not the same format the recommendation
+ variable typically would be after executing setRecVariables.  Also, altering some recommendation variables but not others could
+ lead to outcomes that are not consistent to one set of the recommendation engine's analysis.  Could be used to load past results
+ from the recommendation engine.  Use this method with caution.
+
+    rec.loadRecVariable(key, value)
+
+To manually set several values on a recommendation variable, use the loadRecVariables method.  The first parameter is an array of
+ strings filled with the name of recommendation variables to change. The second parameter is an array of values which to assign
+to the previous mentioned recommendation variables.  The value that is in the same index as the recommendation variable name in
+the key array will be assigned to that recommendation variable.  If the key and value arrays are of different lengths, the code
+will throw an error.  Could be used to load past results from the recommendation engine.  Again, use with caution.
+
+    rec.<span class="apidocCodeKeywordSpan">loadRecVariables</span>(keys, values)
+
+Initially the recommendation variables will be set to null, until a call is made to launch the python recommendation engine.  Now
+, I will describe the recommendation variables.
+
+**results**
+
+An array containing all of the below recommendation variables except for rawResults.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.nearestNeighborhoods" id="apidoc.module.product-recommender.nearestNeighborhoods">module product-recommender.nearestNeighborhoods</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.nearestNeighborhoods.nearestNeighborhoods" id="apidoc.element.product-recommender.nearestNeighborhoods.nearestNeighborhoods">
+        function <span class="apidocSignatureSpan">product-recommender.</span>nearestNeighborhoods
+        <span class="apidocSignatureSpan">(name, num)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nearestNeighborhoods = function (name, num){
+  return helpers._findNearestNeighborhoods(name, num, 'customers');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.nearestNeighbors" id="apidoc.module.product-recommender.nearestNeighbors">module product-recommender.nearestNeighbors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.nearestNeighbors.nearestNeighbors" id="apidoc.element.product-recommender.nearestNeighbors.nearestNeighbors">
+        function <span class="apidocSignatureSpan">product-recommender.</span>nearestNeighbors
+        <span class="apidocSignatureSpan">(name, num, overflow)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nearestNeighbors = function (name, num, overflow){
+  return helpers._findNearestNeighbors(name, num, 'customers', overflow);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.relatedProducts('shoes')
+
+**nearestNeighbors(customer, num, overflow)**
+
+This method takes a customer string as a parameter, and contains an optional num parameter that will default to 1 if it is not included
+ as an argument.  The optional overflow parameter defaults to true.   The method reveals which customers are the lowest distance
+ away from the listed customer.  An array is returned that contains at least the num closest customers to the listed customer.
+The array is ordered, so customers at a lower index are either closer or the same distance away as customers at a higher index.
+The array may be greater than length num if when index num has been reached there is a tie to who is the closest customer.  If the
+ overflow parameter is set to false, then the array will be limited to length num, even in the case of ties.
+
+rec.<span class="apidocCodeKeywordSpan">nearestNeighbors</span>('Steve', 4, false)
+
+**nearestNeighborhoods(customer, num)**
+
+This method takes a customer string as a parameter, and takes an optional num parameter which will default to 1 if not included.
+This method returns an ordered array that shows the num closest relative distances different customers are from the listed customer
+, along with the customers who are that distance away.  The customerMatrix is used to find this relative distance.  Each entry in
+ the returned array is an object, with a single key referring to a distance.  The corresponding value for that distance key is an
+ array filled with all customers who are that distance away from the listed customer.
+
+rec.nearestNeighborhoops('Steve', 4)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.nearestProductNeighborhoods" id="apidoc.module.product-recommender.nearestProductNeighborhoods">module product-recommender.nearestProductNeighborhoods</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.nearestProductNeighborhoods.nearestProductNeighborhoods" id="apidoc.element.product-recommender.nearestProductNeighborhoods.nearestProductNeighborhoods">
+        function <span class="apidocSignatureSpan">product-recommender.</span>nearestProductNeighborhoods
+        <span class="apidocSignatureSpan">(name, num)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nearestProductNeighborhoods = function (name, num){
+  return helpers._findNearestNeighborhoods(name, num, 'products');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    rec.nearestProducts('shoes', 2)
+
+**nearestProductNeighborhoods(product, num)**
+
+This method takes a product string and an optional num parameter.  This method behaves similarly to the nearestNeighborhoods method
+, but instead of searching for the closest customers to a listed customer, it looks for the closest products to a listed product
+.
+
+    rec.<span class="apidocCodeKeywordSpan">nearestProductNeighborhoods</span>('shoes', 2)
+
+[API](#use)
+
+## 3.  &lt;a name='vars' href='#'/&gt; Recommendation Variables
+
+The recommendation variables hold the fine-grained results from my product recommendation algorithm.  These results can be accessed
+ overall by the results variable, or can be broken into various categories.  To access a recommendation variable, one would call
+ the getRecVariable method, passing the desired variable name in as a key.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.nearestProducts" id="apidoc.module.product-recommender.nearestProducts">module product-recommender.nearestProducts</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.nearestProducts.nearestProducts" id="apidoc.element.product-recommender.nearestProducts.nearestProducts">
+        function <span class="apidocSignatureSpan">product-recommender.</span>nearestProducts
+        <span class="apidocSignatureSpan">(name, num, overflow)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nearestProducts = function (name, num, overflow){
+  return helpers._findNearestNeighbors(name, num, 'products', overflow);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.nearestNeighborhoops('Steve', 4)
+
+**nearestProducts(product, num, overflow)**
+
+This method takes a product string as well as optional nums and overflow paremeters.  The method behaves similarly to nearestNeighbors
+, but instead of finding the closest customers to a particular customers, it finds the products most similar to the listed product
+.
+
+rec.<span class="apidocCodeKeywordSpan">nearestProducts</span>('shoes', 2)
+
+**nearestProductNeighborhoods(product, num)**
+
+This method takes a product string and an optional num parameter.  This method behaves similarly to the nearestNeighborhoods method
+, but instead of searching for the closest customers to a listed customer, it looks for the closest products to a listed product
+.
+
+rec.nearestProductNeighborhoods('shoes', 2)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.pastCustomerRecommendations" id="apidoc.module.product-recommender.pastCustomerRecommendations">module product-recommender.pastCustomerRecommendations</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.pastCustomerRecommendations.pastCustomerRecommendations" id="apidoc.element.product-recommender.pastCustomerRecommendations.pastCustomerRecommendations">
+        function <span class="apidocSignatureSpan">product-recommender.</span>pastCustomerRecommendations
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pastCustomerRecommendations = function (name){
+  helpers._nameChecker(name);
+  helpers._recVariableChecker();
+  return rec.pastRecommendations[name];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.powerRecommendation" id="apidoc.module.product-recommender.powerRecommendation">module product-recommender.powerRecommendation</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.powerRecommendation.powerRecommendation" id="apidoc.element.product-recommender.powerRecommendation.powerRecommendation">
+        function <span class="apidocSignatureSpan">product-recommender.</span>powerRecommendation
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">powerRecommendation = function (name){
+  return this.recommender(name, rec.powerRecMatrix);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.recommendByProduct('Steve', 'shoes')
+
+**powerRecommendation(customer)**
+
+This method creates a recommendation for a particular customer, based on the rec.powerRecMatrix recommendation variable.  This matrix
+ only contains results from clusters with a higher silhouette score than customerClusters.  The matrix weighs the best results from
+ each power cluster, and ranks them.  This way, upon calling powerRecommendation, the highest perfoming result across all the power
+ clusters is returned.
+
+rec.<span class="apidocCodeKeywordSpan">powerRecommendation</span>('Steve')
+
+**pastCustomerRecommendations(customer)**
+
+This method returns an object that reveals which products have been recommended to customers through the different recommendation
+ analytics methods.  To check if a product has been recommended, use the product's name as a key on the object.  If the value
+ returned for that product key is true, the product has been recommended to listed customer.  If the value returned is undefined
+, the product has not been recommended yet to that customer.
+
+rec.pastCustomerRecommendatons('Steve')
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.recommendByProduct" id="apidoc.module.product-recommender.recommendByProduct">module product-recommender.recommendByProduct</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.recommendByProduct.recommendByProduct" id="apidoc.element.product-recommender.recommendByProduct.recommendByProduct">
+        function <span class="apidocSignatureSpan">product-recommender.</span>recommendByProduct
+        <span class="apidocSignatureSpan">(name, product)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">recommendByProduct = function (name, product){
+  var matrix;
+  if(product === undefined){
+    matrix = rec.recommendationMatrix;
+  }
+  else{
+    index = helpers._productClusterFinder(product);
+    matrix = rec.subClustersHelpers[index][6];
+  }
+  return this.recommender(name, matrix);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.recommender('Steve', matrix)
+
+**recommendByProduct(customer, product)**
+
+This method takes a customer string and a product string as parameters.  The method then determines which product group the product
+ belongs to, and accesses the proper recommendation matrix based on that product group.  This custom recommendation matrix is then
+ used to return a product more focused on the customers buying patterns in relation the input product.
+
+rec.<span class="apidocCodeKeywordSpan">recommendByProduct</span>('Steve', 'shoes')
+
+**powerRecommendation(customer)**
+
+This method creates a recommendation for a particular customer, based on the rec.powerRecMatrix recommendation variable.  This matrix
+ only contains results from clusters with a higher silhouette score than customerClusters.  The matrix weighs the best results from
+ each power cluster, and ranks them.  This way, upon calling powerRecommendation, the highest perfoming result across all the power
+ clusters is returned.
+
+rec.powerRecommendation('Steve')
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.recommender" id="apidoc.module.product-recommender.recommender">module product-recommender.recommender</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.recommender.recommender" id="apidoc.element.product-recommender.recommender.recommender">
+        function <span class="apidocSignatureSpan">product-recommender.</span>recommender
+        <span class="apidocSignatureSpan">(name, matrix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">recommender = function (name, matrix){
+  matrix = matrix || rec.recommendationMatrix;
+  helpers._nameChecker(name);
+  helpers._recVariableChecker();
+  var recommendation = matrix[rec.customersMap[name]].pop();
+  var attraction = Object.keys(recommendation)[0];
+  var product = recommendation[attraction];
+  if(rec.pastRecommendations[name][product] === true){
+    return this.recommender(name,matrix);
+  } else{
+    rec.pastRecommendations[name][product] = true;
+  }
+  return product;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+**recommender(customer, recMatrix)**
+
+This method accepts inputs of a customer string from the customer array and the optional input of a recommendation matrix.  The
+method considers the input customer's row from the recommendation matrix and pops off the product that my algorithm has determined
+ is the strongest recommendation in that group.  The recommended product is returned.
+
+The recommendation matrix parameter allows the more custom recommendation matrices built around buying trends in related product
+ groups to be used instead of the default matrix.  If a user buys a pair of shoes, he may have a certain taste in products similar
+ to shoes that is different than his taste in other areas.  By placing the recommendation matrix concerned with the shoe products
+ in the recommender method, the recommendation can be fine tuned based on the reality that the user recently bought shoes.  With
+ this custom matrix parameter, one can choose which product group of interest one wants the recommendation tailored towards.
+
+rec.<span class="apidocCodeKeywordSpan">recommender</span>('Steve', matrix)
+
+**recommendByProduct(customer, product)**
+
+This method takes a customer string and a product string as parameters.  The method then determines which product group the product
+ belongs to, and accesses the proper recommendation matrix based on that product group.  This custom recommendation matrix is then
+ used to return a product more focused on the customers buying patterns in relation the input product.
+
+rec.recommendByProduct('Steve', 'shoes')
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.relatedCustomers" id="apidoc.module.product-recommender.relatedCustomers">module product-recommender.relatedCustomers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.relatedCustomers.relatedCustomers" id="apidoc.element.product-recommender.relatedCustomers.relatedCustomers">
+        function <span class="apidocSignatureSpan">product-recommender.</span>relatedCustomers
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">relatedCustomers = function (name){
+  var cluster = this.getCustomerCluster(name);
+  cluster.splice(cluster.indexOf(name), 1);
+  return cluster;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.getProductCluster('shoes')
+
+**relatedCustomers(customer)**
+
+This method accepts a customer string as a parameter and returns an array of customers with similar purchase histories based on
+clustering.  This result returns the members of that customer's global cluster group, excluding the input customer.  To investigate
+ more focused groups based on certain product patterns, please use the the relatedCustomersByProduct method.
+
+rec.<span class="apidocCodeKeywordSpan">relatedCustomers</span>('Steve')
+
+**relatedCustomersByProduct(customer, product)**
+
+This method takes a customer string and product string as a parameter. Based on the input product, a cluster is selected that reflects
+ the customer's taste in relation to that product.  The method returns members of that cluster, excluding the input customer
+.  These customers have similar buying patterns with the input customer in terms of products similar to the product parameter.
+
+rec.relatedCustomersByProduct('Steve', 'shoes')
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.relatedCustomersByProduct" id="apidoc.module.product-recommender.relatedCustomersByProduct">module product-recommender.relatedCustomersByProduct</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.relatedCustomersByProduct.relatedCustomersByProduct" id="apidoc.element.product-recommender.relatedCustomersByProduct.relatedCustomersByProduct">
+        function <span class="apidocSignatureSpan">product-recommender.</span>relatedCustomersByProduct
+        <span class="apidocSignatureSpan">(name, product)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">relatedCustomersByProduct = function (name, product){
+  var related = this.getCustomerClusterByProduct(name, product);
+  related.splice(related.indexOf(name), 1);
+  return related;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+rec.relatedCustomers('Steve')
+
+**relatedCustomersByProduct(customer, product)**
+
+This method takes a customer string and product string as a parameter. Based on the input product, a cluster is selected that reflects
+ the customer's taste in relation to that product.  The method returns members of that cluster, excluding the input customer
+.  These customers have similar buying patterns with the input customer in terms of products similar to the product parameter.
+
+rec.<span class="apidocCodeKeywordSpan">relatedCustomersByProduct</span>('Steve', 'shoes')
+
+**relatedProducts(product)**
+
+This method takes a product string as a parameter.  The method returns an array of products my algorithm has judged to be similar
+ based on the aggregate purchase history of my customers.  The returned products are in the same product cluster as the input product
+, excluding the input product.
+
+rec.relatedProducts('shoes')
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.relatedProducts" id="apidoc.module.product-recommender.relatedProducts">module product-recommender.relatedProducts</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.relatedProducts.relatedProducts" id="apidoc.element.product-recommender.relatedProducts.relatedProducts">
+        function <span class="apidocSignatureSpan">product-recommender.</span>relatedProducts
+        <span class="apidocSignatureSpan">(product)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">relatedProducts = function (product){
+  var cluster = this.getProductCluster(product);
+  cluster.splice(cluster.indexOf(product), 1);
+  return cluster;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  rec.relatedCustomersByProduct('Steve', 'shoes')
+
+**relatedProducts(product)**
+
+This method takes a product string as a parameter.  The method returns an array of products my algorithm has judged to be similar
+ based on the aggregate purchase history of my customers.  The returned products are in the same product cluster as the input product
+, excluding the input product.
+
+  rec.<span class="apidocCodeKeywordSpan">relatedProducts</span>('shoes')
+
+**nearestNeighbors(customer, num, overflow)**
+
+This method takes a customer string as a parameter, and contains an optional num parameter that will default to 1 if it is not included
+ as an argument.  The optional overflow parameter defaults to true.   The method reveals which customers are the lowest distance
+ away from the listed customer.  An array is returned that contains at least the num closest customers to the listed customer.
+The array is ordered, so customers at a lower index are either closer or the same distance away as customers at a higher index.
+The array may be greater than length num if when index num has been reached there is a tie to who is the closest customer.  If the
+ overflow parameter is set to false, then the array will be limited to length num, even in the case of ties.
+
+  rec.nearestNeighbors('Steve', 4, false)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.product-recommender.setRecVariables" id="apidoc.module.product-recommender.setRecVariables">module product-recommender.setRecVariables</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.product-recommender.setRecVariables.setRecVariables" id="apidoc.element.product-recommender.setRecVariables.setRecVariables">
+        function <span class="apidocSignatureSpan">product-recommender.</span>setRecVariables
+        <span class="apidocSignatureSpan">(matrix, cb, names, prods)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setRecVariables = function (matrix, cb, names, prods){
+  var path;
+  if(Array.isArray(matrix)){
+    path = false;
+  } else if (typeof matrix === 'string'){
+    path = true;
+  }
+  cb = cb || function(){};
+
+  names = JSON.stringify(names);
+  prods = JSON.stringify(prods);
+
+  var python = require('child_process').spawn(
+    'python',
+    [__dirname + '/../lib/exec.py', names, prods, matrix, path]);
+  output = '';
+  python.stdout.on('data', function(data){
+    output += data;
+  });
+  python.stdout.on('close', function(){
+    _buildRecVariables(output);
+    args = Array.prototype.slice.call(arguments,4);
+    cb.apply(this,args);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## 1.&lt;a name='learn' href='#'/&gt; Recommendation Engine
+
+This section consists of the setRecVariables method, which invokes the python recommendation engine.  When the algorithm has finished
+ streaming its results to node, the setRecVariables method then parses these results and assigns values to each of the recommendation
+ variables.  Whenever one wants a fresh reading of the recommendation engine's analysis, one simply needs to run setRecVariables
+ method again and the recommendation variables will be set to the values of the latest analysis.
+
+The setRecVariables method takes four parameters.  Any additional arguments will be added as arguments to the callback parameter
+.
+
+rec.<span class="apidocCodeKeywordSpan">setRecVariables</span>(history, callback, names, products)
+
+**history**
+
+The history argument contains either a matrix or a string that references the directory structure of a file containing a matrix.
+A matrix is a 2d-array.  Each entry in the outer array contains the purchase history of an individual customer.  The length of the
+ outer array is the same length as the names array below, so each customer in the data set is represented in the history parameter
+.  The length of each inner array is the length of the products array below.  Each inner array contains information on which product
+ from the products list each customer has purchased.  The order of products in the inner array should match the order in the products
+ array, so each column of the 2-D array refers to a particular product.
+
+var history = [ [1,0,0], [1,1,1], [0,1,1] ]
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
