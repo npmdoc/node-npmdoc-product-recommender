@@ -1,4 +1,7 @@
-# api documentation for  [product-recommender (v1.3.2)](https://github.com/lramsey/product-recommender#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-product-recommender.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-product-recommender) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-product-recommender.svg)](https://travis-ci.org/npmdoc/node-npmdoc-product-recommender)
+# npmdoc-product-recommender
+
+#### basic api documentation for  [product-recommender (v1.3.2)](https://github.com/lramsey/product-recommender#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-product-recommender.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-product-recommender) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-product-recommender.svg)](https://travis-ci.org/npmdoc/node-npmdoc-product-recommender)
+
 #### npm module that utilizes a python machine learning recommendation engine to give easy access to product recommendations.
 
 [![NPM](https://nodei.co/npm/product-recommender.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/product-recommender)
@@ -57,7 +60,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "version": "1.3.2"
+    "version": "1.3.2",
+    "bin": {}
 }
 ```
 
